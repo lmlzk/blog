@@ -1,0 +1,11 @@
+{% load  staticfiles %}
+<div class="logo f_l"> <a href="/"><img src="{%static 'images/logo.png' %}"></a> </div>
+<nav id="topnav" class="f_r">
+    <ul>
+        {% for topnav in topnav_list %}
+            <a href={{ topnav.href }} target="_blank">{{ topnav.title }}</a>
+        {% endfor %}
+    <a href="base.html" target="_blank">首页</a>
+    </ul>
+    <script src="{%static 'js/nav.js' %}"></script>
+  </nav>
