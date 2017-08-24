@@ -1,62 +1,21 @@
 {% load staticfiles %}
-  <div class="l_box f_l">
-      {% block content_left %}
-{% include 'blog/ad.html' %}
-    {% include 'blog/blog.html' %}
-      {% endblock %}
-  </div>
+<div class="l_box f_l">
+    {% block content_left %}
+        {% include 'blog/ad.html' %}
+        {% include 'blog/blog.html' %}
+    {% endblock %}
+</div>
     <!-- banner代码 结束 -->
-  <div class="r_box f_r">
-
-      {% block tit01 %}
-           {% include 'blog/tit01.html' %}
-      {% endblock %}
+<div class="r_box f_r">
+    {% block focusme %}
+        {% include 'blog/focusme.html' %}
+    {% endblock %}
     <!--tit01 end-->
 
-      <div class="ad300x100"> <img src="{%static 'images/ad300x100.jpg' %}"> </div>
-      <div class="moreSelect" id="lp_right_select">
-      <script>
-window.onload = function ()
-{
-	var oLi = document.getElementById("tab").getElementsByTagName("li");
-	var oUl = document.getElementById("ms-main").getElementsByTagName("div");
-
-	for(var i = 0; i < oLi.length; i++)
-	{
-		oLi[i].index = i;
-		oLi[i].onmouseover = function ()
-		{
-			for(var n = 0; n < oLi.length; n++) oLi[n].className="";
-			this.className = "cur";
-			for(var n = 0; n < oUl.length; n++) oUl[n].style.display = "none";
-			oUl[this.index].style.display = "block"
-		}
-	}
-}
-</script>
-      <div class="ms-top">
-        <ul class="hd" id="tab">
-          <li class="cur"><a href="/">点击排行</a></li>
-          <li><a href="/">最新文章</a></li>
-          <li><a href="/">站长推荐</a></li>
-        </ul>
-      </div>
-      <div class="ms-main" id="ms-main">
-          {% block bd1 %}
-              {% include 'blog/bd1.html' %}
-          {% endblock %}
-
-
-      {% block bd2 %}
-          {% include 'blog/bd2.html' %}
-      {% endblock %}
-
-      {% block bd3 %}
-          {% include 'blog/bd3.html' %}
-      {% endblock %}
-      </div>
-      <!--ms-main end -->
-    </div>
+    <div class="ad300x100"> <img src="{%static 'images/ad300x100.jpg' %}"> </div>
+    {% block recommend %}
+        {% include 'blog/recommend.html' %}
+    {% endblock %}
     <!--切换卡 moreSelect end -->
 
     {% block cloud %}
@@ -64,12 +23,12 @@ window.onload = function ()
     {% endblock %}
 
     {% block tuwen %}
-        {% include 'blog/tuwen.html' %}
+        {% include 'blog/imgtxt.html' %}
     {% endblock %}
-    <div class="ad"> <img src="{%static 'images/03.jpg' %}"> </div>
 
-   {% block links %}
+    <div class="ad"> <img src="{%static 'images/03.jpg' %}"> </div>
+    {% block links %}
        {% include 'blog/links.html' %}
-  {% endblock %}
-  </div>
+    {% endblock %}
+</div>
   <!--r_box end -->

@@ -1,31 +1,27 @@
 <!doctype html>
 <html>
 <head>
-<!--<meta charset="gb2312">-->
-  <meta charset="UTF-8">
-  {% load staticfiles %}
-<title>{{ title |default:"lml个人博客"}}</title>
-<meta name="keywords" content="" />
-<meta name="description" content="" />
+    <meta charset="UTF-8">
+    {% load staticfiles %}
+    <title>{{ title |default:"lml个人博客"}}</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+
     {% block custom_css %}{% endblock %}
 
-{% block custom_js %}{% endblock %}
+    {% block custom_js %}{% endblock %}
 </head>
 <body>
 <header>
-    {% block header %}
-
-    {% endblock %}
+    {% block header %}{% endblock %}
 </header>
 
 <article>
-  {% block article %}
-
-    {% endblock %}
+    {% block article %}{% endblock %}
 </article>
+
 <footer>
-    {% block footer %}
-    {% endblock %}
+    {% block footer %}{% endblock %}
 </footer>
 </body>
 </html>
